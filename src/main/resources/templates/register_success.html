@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section>
+        <div align="center">
+            <h1>Suceess</h1>
+            <h4>Here is your information</h4>
+            <div>
+                <span>Name: </span><span th:text="${user.name}"></span>
+                <br />
+                <span>Email: </span><span th:text="${user.email}"></span>
+                <br />
+                <span>Password: </span><span th:text="${user.password}"></span>
+                <br />
+                <span>Gender: </span><span th:text="${user.gender}"></span>
+                <br />
+                <span>Profession: </span><span th:text="${user.profession}"></span>
+                <br />
+                <span>Married: </span><span th:text="${user.married}"></span>
+                <br />
+                <span>Note: </span><span th:text="${user.note}"></span>
+                <br />
+                <span>Birthday: </span><span th:text="${user.birthday}"></span>
+                <br />
+            </div>
+
+        </div>
+    </section>
+
+
+</body>
+</html>

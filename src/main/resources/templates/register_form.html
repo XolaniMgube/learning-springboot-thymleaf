@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+    <section>
+        <div align="center">
+            <h1>User Registration Form</h1>
+            <form th:action="@{/register}" th:method="post" th:object="${user}">
+                <div>
+                    <label for="name">Name: </label>
+                    <input th:field="*{name}" id="name" type="text" >
+                </div>
+                <br/>
+                <div>
+                    <label for="email">Email: </label>
+                    <input th:field="*{email}" id="email" type="text" value="">
+                </div>
+                <br/>
+                <div>
+                    <label for="password">Password: </label>
+                    <input th:field="*{password}" id="password" type="password" vale="">
+                </div>
+                <br/>
+                <div>
+                    <input type="radio" th:field="*{gender}" value="male">Male
+                    <input type="radio" th:field="*{gender}" value="female">Female
+                </div>
+                <br/>
+                <div>
+                    <label for="profession">Profession: </label>
+                    <select th:field="*{profession}" id="profession">
+                        <option th:each="singleProfession: ${listProfession}" th:value="${singleProfession}" th:text="${singleProfession}"></option>
+                    </select>
+                </div>
+                <br/>
+                <div>
+                    <label for="note">Note: </label>
+                    <textarea th:field="*{note}" id="note"></textarea>
+                </div>
+                <br/>
+                <div>
+                    <label for="married">Married: </label>
+                    <input type="checkbox" id="married" th:field="*{married}" value="married"/>
+                </div>
+                <br/>
+                <div>
+                    <label for="birthday">Birthday: </label>
+                    <input th:field="*{birthday}" id="birthday" type="date" >
+                </div>
+                <br/>
+                <button type="submit">Register</button>
+
+            </form>
+        </div>
+    </section>
+</body>
+</html>
