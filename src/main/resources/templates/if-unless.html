@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Using If Unless Statements</title>
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h4>User 1</h4>
+            <ol th:each="singleUser: ${user2}">
+                <li  th:text="${singleUser.userName}"></li>
+                <li  th:text="${singleUser.email}"></li>
+                <li>
+                    <span th:if="${singleUser.role} == 'manager'">You are the boss</span>
+                    <span th:if="${singleUser.role} == 'developer'">You write code bro</span>
+                    <span th:if="${singleUser.role} == 'designer'">You make nice UI</span>
+<!--                    <span th:unless="${singleUser.role} == 'live life'">You Don't Live life</span>-->
+                </li>
+            </ol>
+        </div>
+    </section>
+</body>
+</html>

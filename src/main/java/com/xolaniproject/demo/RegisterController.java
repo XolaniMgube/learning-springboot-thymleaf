@@ -29,4 +29,24 @@ public class RegisterController {
         return "register_success";
     }
 
+    @GetMapping("/if-unless")
+    public String ifUnless (Model model) {
+        List<User2> user2 = new ArrayList<>();
+        user2.add(new User2("Xolani", "xolani@mail.com", "manager"));
+        user2.add(new User2("Refiloe", "fifi@mail.com", "developer"));
+        user2.add(new User2("Njabulo", "skopo@mail.com", "live life"));
+        model.addAttribute("user2", user2);
+        return "if-unless";
+    }
+
+    @GetMapping("/switch-cases")
+    public String switchCases (Model model) {
+        List<User2> user3 = new ArrayList<>();
+        user3.add(new User2("Xolani", "xolani@mail.com", "manager"));
+        user3.add(new User2("Refiloe", "fifi@mail.com", "developer"));
+        user3.add(new User2("Njabulo", "skopo@mail.com", "live life"));
+        model.addAttribute("user3", user3);
+        return "switch-case";
+    }
+
 }

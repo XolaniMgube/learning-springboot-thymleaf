@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Form</title>
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <section>
-        <div align="center">
-            <h1>User Registration Form</h1>
+        <div class="container">
+            <h1 class="bg-primary text-center">User Registration Form</h1>
             <form th:action="@{/register}" th:method="post" th:object="${user}">
                 <div>
                     <label for="name">Name: </label>
@@ -56,5 +58,6 @@
             </form>
         </div>
     </section>
+    <script th:src="@{/js/main.js}"></script>
 </body>
 </html>

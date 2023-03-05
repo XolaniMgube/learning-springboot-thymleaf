@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch Cases</title>
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <ol th:each="singleUser: ${user3}">
+                <li th:text="${singleUser.userName}"></li>
+                <li th:text="${singleUser.email}"></li>
+                <li th:switch="${singleUser.role}">
+                    <span th:case="'manager'">Mr Boss</span>
+                    <span th:case="'developer'">Coder</span>
+                    <span th:case="*">General Worker</span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+</body>
+</html>
